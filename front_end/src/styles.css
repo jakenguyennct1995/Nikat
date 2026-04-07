@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff4f3;
 }
 
 .btn-primary {
