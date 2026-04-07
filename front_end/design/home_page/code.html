@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#3b004d",
+                    "outline-variant": "#e09c98",
+                    "on-tertiary": "#ffedfd",
+                    "on-tertiary-fixed-variant": "#641e7a",
+                    "inverse-surface": "#240304",
+                    "on-surface": "#4e2120",
+                    "primary-container": "#ff784e",
+                    "outline": "#a36764",
+                    "on-primary-fixed-variant": "#571400",
+                    "surface-variant": "#ffd2cf",
+                    "tertiary": "#843d99",
+                    "error-container": "#fb5151",
+                    "surface-container-low": "#ffedeb",
+                    "secondary-container": "#ffc3bf",
+                    "tertiary-fixed": "#ea9bff",
+                    "on-secondary-fixed-variant": "#912d2e",
+                    "surface-container-highest": "#ffd2cf",
+                    "secondary": "#a03838",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#fe6f42",
+                    "primary-fixed": "#ff784e",
+                    "inverse-on-surface": "#ce8c88",
+                    "surface-bright": "#fff4f3",
+                    "surface-dim": "#ffc7c3",
+                    "primary-dim": "#952800",
+                    "error": "#b31b25",
+                    "on-secondary-container": "#852426",
+                    "on-background": "#4e2120",
+                    "on-tertiary-container": "#5a1171",
+                    "on-secondary": "#ffefee",
+                    "secondary-fixed": "#ffc3bf",
+                    "surface-tint": "#a83206",
+                    "on-primary": "#ffefeb",
+                    "tertiary-container": "#ea9bff",
+                    "background": "#fff4f3",
+                    "on-error": "#ffefee",
+                    "secondary-dim": "#902c2d",
+                    "on-surface-variant": "#834c4a",
+                    "on-secondary-fixed": "#6a0f15",
+                    "secondary-fixed-dim": "#ffafab",
+                    "surface-container": "#ffe1df",
+                    "on-primary-fixed": "#000000",
+                    "surface-container-high": "#ffdad7",
+                    "tertiary-dim": "#76308c",
+                    "on-primary-container": "#470e00",
+                    "primary-fixed-dim": "#f3683b",
+                    "tertiary-fixed-dim": "#db8ef0",
+                    "error-dim": "#9f0519",
+                    "on-error-container": "#570008",
+                    "surface": "#fff4f3",
+                    "primary": "#a83206"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .break-out-image { filter: drop-shadow(0 20px 30px rgba(78, 33, 32, 0.15)); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-gradient-to-r from-orange-800 to-orange-500 dark:from-orange-950 dark:to-orange-800 backdrop-blur-xl bg-opacity-85 docked full-width top-0 sticky z-50 shadow-xl shadow-orange-950/20">
+<div class="flex flex-col w-full px-6 py-3 max-w-screen-2xl mx-auto">
+<div class="flex items-center justify-between gap-8">
+<!-- Brand Logo -->
+<a class="text-2xl font-black tracking-tighter text-white uppercase italic transition-all active:scale-95 duration-150 ease-in-out" href="#">
+                    PET CURATOR
+                </a>
+<!-- Search Bar Command Center -->
+<div class="flex-1 max-w-2xl hidden md:flex">
+<div class="relative w-full group">
+<input class="w-full bg-surface-container-lowest text-on-surface-variant border-none rounded-full py-2.5 pl-5 pr-12 text-sm focus:ring-2 focus:ring-primary-fixed transition-all duration-300 placeholder:text-stone-400" placeholder="Tìm kiếm sản phẩm cho thú cưng của bạn..." type="text"/>
+<button class="absolute right-1 top-1 bg-primary p-1.5 rounded-full text-white hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+</div>
+</div>
+<!-- Action Icons -->
+<div class="flex items-center gap-6 text-white">
+<button class="hover:scale-110 transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+<button class="hover:scale-110 transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="relative hover:scale-110 transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-white text-primary text-[10px] font-bold px-1.5 rounded-full border border-primary">2</span>
+</button>
+</div>
+</div>
+<!-- Sub Navigation -->
+<nav class="flex items-center gap-8 mt-3 overflow-x-auto no-scrollbar">
+<a class="text-white border-b-2 border-white pb-1 font-bold uppercase text-xs tracking-widest transition-all" href="#">Mèo</a>
+<a class="text-orange-100/80 hover:text-white uppercase text-xs tracking-widest transition-all" href="#">Today's Sale</a>
+<a class="text-orange-100/80 hover:text-white uppercase text-xs tracking-widest transition-all" href="#">Dịch vụ chăm Pets</a>
+</nav>
+</div>
+</header>
+<!-- Hero Section -->
+<main class="max-w-screen-2xl mx-auto px-6 py-8">
+<section class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100 shadow-sm min-h-[500px] flex items-center">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img alt="Decorative background" class="w-full h-full object-cover opacity-20 scale-105" data-alt="abstract background with soft warm orange and cream colors, subtle textures and professional studio lighting with blurry pet shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVxXUu4e_IkzHnCzlq-04yefkbvQ1F14YguGjYYcHv16ectvvet5VXkZAa-e0DywJ3tTBbjz2JtdwBRDYwiOwEjQC-8E4CZKcLR5auuOXvgTbS_mAeUkZj6H0GziVFiiALt1-wTsBZB33vquuKvKqSrl-nEbv2t2n-GAK8ZhPRCxyFbpeIHhPybR1nTJreF4Gu5TtWqX1hpGQCLcafSX_V1or0yNng8vXBNyIn0FVDTH8nM33nb3e-kr9wxkHde6Sw7Qk_jtuTw"/>
+</div>
+<div class="relative z-10 w-full grid grid-cols-1 md:grid-cols-2 items-center px-12">
+<div class="space-y-6">
+<span class="inline-block bg-primary text-white text-[10px] font-black tracking-[0.2em] px-3 py-1 rounded-full uppercase">Exclusive Deal</span>
+<h1 class="text-5xl md:text-6xl font-extrabold text-on-surface leading-tight tracking-tight">
+                        Tiết kiệm hơn<br/>
+<span class="text-primary italic">Mua combo tặng 1 túi pate</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md">Dành riêng cho các "Hoàng Thượng" khó tính nhất. Combo dinh dưỡng toàn diện, tặng kèm quà tặng sức khỏe.</p>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white font-bold uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg shadow-primary/20 hover:scale-102 hover:brightness-110 active:scale-95 transition-all duration-200">
+                        MUA NGAY
+                    </button>
+</div>
+<div class="relative hidden md:block">
+<img alt="Cute cat looking at viewer" class="break-out-image w-full h-[550px] object-contain transform translate-y-12 rotate-2" data-alt="professional studio portrait of a fluffy ginger cat sitting elegantly against a clean warm cream background, sharp focus, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMDhFiQxIxDynKjxRjNkUt2I_cs2VlAqwGETCOX0K3_4UbSS1swnmI_OU_T_j14W-XmztlRIDEAj3uylMiH5zyZW9hfDp_aWqolKojMOV93u0tjojkL7UgzVGSpqzXkOA4jjzwDFqL8D4t64m1YviGZ0UP-ei89Ywspvy-1LFJ9scCGe5z8VgBbcxxqH3xdntOd8ZaDViLAemnIoB8QOIdmOB_QmeMTpUlridIyeammHT9Kuo1NrHimU0e9FPvLF6ilmvnQ8lXiQ"/>
+</div>
+</div>
+</section>
+<!-- Trust Features Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 group hover:bg-surface-container-lowest transition-all duration-300">
+<div class="bg-primary-container/20 p-3 rounded-full text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-on-surface">Giao hỏa tốc</h3>
+<p class="text-[12px] text-on-surface-variant">Nhận hàng trong 2h</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 group hover:bg-surface-container-lowest transition-all duration-300">
+<div class="bg-primary-container/20 p-3 rounded-full text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-on-surface">Đổi trả miễn phí</h3>
+<p class="text-[12px] text-on-surface-variant">Trong vòng 7 ngày</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 group hover:bg-surface-container-lowest transition-all duration-300">
+<div class="bg-primary-container/20 p-3 rounded-full text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-on-surface">Chính hãng 100%</h3>
+<p class="text-[12px] text-on-surface-variant">Cam kết chất lượng</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 group hover:bg-surface-container-lowest transition-all duration-300">
+<div class="bg-primary-container/20 p-3 rounded-full text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-on-surface">Hỗ trợ 24/7</h3>
+<p class="text-[12px] text-on-surface-variant">Luôn luôn sẵn sàng</p>
+</div>
+</div>
+</section>
+<!-- Flash Sale Promo Banner -->
+<section class="mt-12 relative overflow-hidden rounded-2xl bg-primary-dim p-8 md:p-12">
+<div class="absolute right-0 top-0 w-1/3 h-full overflow-hidden opacity-30">
+<img alt="Pet food texture" class="w-full h-full object-cover" data-alt="close-up view of high quality dry cat food kibbles with dramatic golden side lighting, macro photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL1Tyu5MJUxY7GTbPtpUdVVg2E-iv-L5grSAjb0-NA7w3_3O1ZPWfj1MMEBjGeVgBcrjTf2Ix1B5GXVMXERW9uVRw09l_iamBUSKN-fEFz7AG0R5tW_gQ3U38pRFHtQ-eSHDpcJ_vYdycQsRgIkVp8CJh95BcZYMIeknEVPzVbJRNGmujvsGOajMPgIs-fg5kBes4mjQwvhig-lTtTwktQP1ZgCG3aHJ6i37ybhhr1TM8NwNCz5PslzSXJLTtM6JbYtwOf_X-6hQ"/>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="text-white">
+<h2 class="text-4xl md:text-5xl font-black italic tracking-tighter uppercase mb-2">MUA NHIỀU GIẢM SÂU</h2>
+<p class="text-orange-200 text-lg">Giảm thêm tới 30% khi mua từ 3 sản phẩm cùng loại.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 min-w-[80px]">
+<span class="block text-2xl font-bold text-white">12</span>
+<span class="text-[10px] text-orange-100 uppercase tracking-widest">Giờ</span>
+</div>
+<div class="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 min-w-[80px]">
+<span class="block text-2xl font-bold text-white">45</span>
+<span class="text-[10px] text-orange-100 uppercase tracking-widest">Phút</span>
+</div>
+<div class="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 min-w-[80px]">
+<span class="block text-2xl font-bold text-white">22</span>
+<span class="text-[10px] text-orange-100 uppercase tracking-widest">Giây</span>
+</div>
+<button class="ml-4 bg-white text-primary font-bold px-8 py-3 rounded-full hover:bg-orange-50 transition-colors">KHÁM PHÁ</button>
+</div>
+</div>
+</section>
+<!-- Product Grid Example -->
+<section class="mt-16">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Sản phẩm nổi bật</h2>
+<p class="text-on-surface-variant">Top những sản phẩm được các bé yêu thích nhất tuần qua</p>
+</div>
+<a class="text-primary font-bold text-sm underline underline-offset-4 hover:text-primary-dim transition-colors" href="#">Xem tất cả</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/10 group cursor-pointer hover:shadow-xl hover:shadow-orange-950/5 transition-all duration-300">
+<div class="relative aspect-square mb-4 rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Cat food can" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Premium cat food tin can packaging on a clean studio table with soft morning lighting and a few green leaves beside it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs5cIFefGIRvkfVinbjuWdn7tVX03w3nvUnJ8h-mokbB9X_V6TwXCD-McjImcN99G7chbzj8Yc55eYb5sw8aQE1FkaHw_x6mGjE-XYpQyxkhNgsOADU-HDYORc7VpcOYOKPQV__8OG343dlrZ4duSaIisE7q9q3j6FIJ-IHZHrDwOXdGJvG3nVE9WBMrHr3UnW3hCl9HGBS0hhVa26iBeC8Zj9IBm6P4dHOB7H6rjbJFyJeQLVBk6Tpmv6ZbS-4m0asilrHJS22w"/>
+<span class="absolute top-2 left-2 bg-error text-white text-[10px] font-bold px-2 py-1 rounded">-25%</span>
+</div>
+<h4 class="font-bold text-sm text-on-surface line-clamp-2 h-10 mb-2">Pate Whiskas Vị Cá Thu 400g - Dinh Dưỡng Cao Cấp</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-primary font-extrabold">35.000₫</span>
+<span class="text-stone-400 text-xs line-through">46.000₫</span>
+</div>
+<button class="w-full py-2 bg-surface-container-low text-primary text-xs font-bold uppercase rounded-lg group-hover:bg-primary group-hover:text-white transition-colors duration-200">Thêm vào giỏ</button>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/10 group cursor-pointer hover:shadow-xl hover:shadow-orange-950/5 transition-all duration-300">
+<div class="relative aspect-square mb-4 rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Dog toy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant colorful braided rope dog toy on a warm wooden floor, sunlight streaming from a window creating soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-A1OtTbV_-a2Bcy_opGjpEnBCj9IYDXToQBY0unQLtlsxjlK94M87W8SrSzwgqYK-RX61Mwv6qQKcSWGAGy4_QV7WMF-x_SlpfvwSr58Ga1P7okLPgTqqTIAtuDf89LctMtvDxKXaRrHuJRwEKMS590wcbi513SRLHDbTRor9HpbuVqQfQ2w9UCOSEt6JOraJ65Oydu8HVhQMbTbEAx4uWL-bNP2PPbZKbHw1JJjxQ0-OIJgD-zOS51oiNMPhisRPRY1n2N05xw"/>
+</div>
+<h4 class="font-bold text-sm text-on-surface line-clamp-2 h-10 mb-2">Đồ Chơi Dây Thừng Cho Chó - Cotton Tự Nhiên</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-primary font-extrabold">79.000₫</span>
+</div>
+<button class="w-full py-2 bg-surface-container-low text-primary text-xs font-bold uppercase rounded-lg group-hover:bg-primary group-hover:text-white transition-colors duration-200">Thêm vào giỏ</button>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/10 group cursor-pointer hover:shadow-xl hover:shadow-orange-950/5 transition-all duration-300">
+<div class="relative aspect-square mb-4 rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Cat bed" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="a plush grey soft round cat bed in a minimalist modern living room setting with warm afternoon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrMS0ndsKW8Ap2lKkbloFHyvulV1FrvsBGpVMpBNDIX3PDCnAMyhyERsCkzoChXJGO9Wck7qSFLtGnYX-T2Rs_FyMjrTMgvDD2403bzo7_nHS7-gQo_D_yEAE9eCo0tO64ZimCINFXyB-JrGtknsofl1nd-Gk61f-lev0IQ7LSjcSJYuIez655PNdMEWMlAvpbZTTlUGxdMC-RF3L891QPH3VAiaXbjc3b8C3BZsnu6U4bzIVsqeq7cVmKSGV-XnniJx0PqT5W0w"/>
+</div>
+<h4 class="font-bold text-sm text-on-surface line-clamp-2 h-10 mb-2">Nệm Ngủ Marshmallow Siêu Êm Cho Mèo</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-primary font-extrabold">199.000₫</span>
+<span class="text-stone-400 text-xs line-through">250.000₫</span>
+</div>
+<button class="w-full py-2 bg-surface-container-low text-primary text-xs font-bold uppercase rounded-lg group-hover:bg-primary group-hover:text-white transition-colors duration-200">Thêm vào giỏ</button>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/10 group cursor-pointer hover:shadow-xl hover:shadow-orange-950/5 transition-all duration-300">
+<div class="relative aspect-square mb-4 rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Pet brush" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="professional stainless steel pet grooming brush with ergonomic handle on a light colored surface, high end product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBZbkX9C8vep7zyjcmrBNuSFpgF_a2WHSTaAKgYc7yDpSU63BeafJogFJHL-g4BEXw0Q0zTKx6y3sFuzniHjYDxklF8wY7OAJdGOIYd-_lUoF0nC6e5YDayqW7fsLRD5PJFTxzZDFb27mUd_k-K9_nXf3TTgaPtSwI0l9-h1mQBlGs3kFKBloFPLnT4ko-OO5TtdIYPVHVic3M_7ACSAUUhDXOo2tWinqYCZ4MkVREXAyhxznEOMI46VCrWYF-8ftsjEtcIwBR-Q"/>
+</div>
+<h4 class="font-bold text-sm text-on-surface line-clamp-2 h-10 mb-2">Lược Chải Lông Tự Động Cao Cấp</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-primary font-extrabold">120.000₫</span>
+</div>
+<button class="w-full py-2 bg-surface-container-low text-primary text-xs font-bold uppercase rounded-lg group-hover:bg-primary group-hover:text-white transition-colors duration-200">Thêm vào giỏ</button>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/10 group cursor-pointer hover:shadow-xl hover:shadow-orange-950/5 transition-all duration-300">
+<div class="relative aspect-square mb-4 rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Fish food" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="colorful tropical fish food flakes in a glass jar, vibrant colors, bright lighting, crisp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsk6ZWanLjQOJ6bKKZ05_w7Aum48hxora3pNmIy0ezP7Q_v8KJU9Kf0aKAHtBvKyYTmik6veJToE3fzwqaV3DbkndL7C-DNtdnE86Qt_qD2S_tMVoYzNQu3ytuWNGQQUtj9fLQFvf1zzBn4U6bmtAGnQfL9esFSMl2FBtbfKCyxICnmb2Fp5U-7LC1ru0Bz2DGU34ruAV16cxzV6iOuuJhggvV11FsdeMIF3AeeOaV5GLNLSuSAYmJh3SFEteaGgdLuOTFXfwLDA"/>
+</div>
+<h4 class="font-bold text-sm text-on-surface line-clamp-2 h-10 mb-2">Thức Ăn Cá Cảnh Đa Màu Sắc 200g</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-primary font-extrabold">45.000₫</span>
+</div>
+<button class="w-full py-2 bg-surface-container-low text-primary text-xs font-bold uppercase rounded-lg group-hover:bg-primary group-hover:text-white transition-colors duration-200">Thêm vào giỏ</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-orange-50 dark:bg-stone-950 full-width pt-12 pb-6 border-t-0 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<h2 class="text-xl font-bold text-orange-800 dark:text-orange-400">PET CURATOR</h2>
+<p class="text-sm font-['Plus_Jakarta_Sans'] text-stone-700 dark:text-stone-300">Điểm đến tin cậy cho mọi chủ nuôi thú cưng tại Việt Nam. Chúng tôi cung cấp những sản phẩm tuyển chọn nhất.</p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-[18px]">social_leaderboard</span></a>
+<a class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-[18px]">alternate_email</span></a>
+<a class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-[18px]">call</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-bold text-on-surface">Về chúng tôi</h3>
+<ul class="space-y-2 text-sm text-stone-500 dark:text-stone-400">
+<li><a class="hover:text-orange-600 transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-orange-600 transition-colors" href="#">Chính sách đổi trả</a></li>
+<li><a class="hover:text-orange-600 transition-colors" href="#">Hệ thống cửa hàng</a></li>
+<li><a class="hover:text-orange-600 transition-colors" href="#">Liên hệ trợ giúp</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="font-bold text-on-surface">Danh mục</h3>
+<ul class="space-y-2 text-sm text-stone-500 dark:text-stone-400">
+<li><a class="hover:text-orange-600 transition-colors" href="#">Thức ăn mèo</a></li>
+<li><a class="hover:text-orange-600 transition-colors" href="#">Đồ chơi thú cưng</a></li>
+<li><a class="hover:text-orange-600 transition-colors" href="#">Phụ kiện &amp; Quần áo</a></li>
+<li><a class="hover:text-orange-600 transition-colors" href="#">Dịch vụ Spa</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="font-bold text-on-surface">Bản tin</h3>
+<p class="text-sm text-stone-500 dark:text-stone-400">Đăng ký để nhận ưu đãi mới nhất.</p>
+<div class="flex gap-2">
+<input class="bg-white border-none rounded-lg px-4 py-2 text-sm flex-1 focus:ring-1 focus:ring-primary" placeholder="Email của bạn" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg hover:scale-105 transition-transform"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-6 border-t border-stone-200 dark:border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[12px] text-stone-500 dark:text-stone-400">© 2024 The Vibrant Curator Pet Shop. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="Visa" class="h-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAwzSxMZyKgGDtatt8Wq7PHuoc6wwuySdswz_N-406EchfClCT1PbVzjLI02smA5yuv_pwm_btMzPOiVmAgtX2Rr8ucOmUCCwBIDkkq15FzXayhRDKkB-nqxQyE4Yn80v0vzhnEeA6fcyHW09t8Id9jAKtLyXPRmALVWotv57nVGU8x8JVGYVQZE4T7lgjwvrIDP1nJ34kzk9_Ov-_SNP76gAtYL-T4K5tYJyd9f0PaG8-5Qi6QD-hy0SysBAifQv-fRwfGWMi4A"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATd3g2seaNTabXEbI8ZGAMqmcgP2pYOfW--9AUMI_OENcxtEgsI0S39G-Ae3oVJXCM8AJXqveyWC_ve_h63aJ7aukc_FvTKitT7CekqUcMq2ay3oxekQB-vegietJ8Vid3mLZv_vXs58LsvFIhDoMwe8jSqKIzkoQwhFv0tcjP7dsc1XBaRM9uPVmEEhCBPwNZ5dDiPPUNUD6HMTnSxlN6zgs0uQip0NzzHRyWQXe5HYwQHXgRyJKDwusQ1wOd3i4nGZTOivQE4g"/>
+<img alt="Paypal" class="h-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU8m9EFjEk6b_VRckf_xVWy7CvOA6jlGbBOqtMcbPMkXxvE-o14Z-ePjirCq0ag-esKcIceluagL1a7D_oYfIWZP7heCGxvnfxlghYyuyzHpfd95q4MzvulUyTX-VrsnaCcoFCOGGo8V-cH89VSUkTokXG-X25EiZn_bZF_eTw7PsSB7-HMwv9v_ixl5EqwJ2e-qaubKl5aTl4PsNio9V-DmD4zkXsduVxERsEdfzvrcF4fBrt5yb7qr_29uNAdzx5sM5Xnt5w9w"/>
+</div>
+</div>
+</footer>
+</body></html>
