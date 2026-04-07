@@ -1,0 +1,4 @@
+front_end/.angular/
+front_end/dist/
+front_end/node_modules/
+front_end/package-lock.json
