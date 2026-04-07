@@ -1,0 +1,20 @@
+@if (loading) {
+  <div class="rounded-lg bg-white p-4 text-sm text-slate-600">Loading product...</div>
+} @else if (error) {
+  <div class="rounded-lg bg-red-50 p-4 text-sm text-red-600">{{ error }}</div>
+} @else if (product) {
+  <section class="grid gap-6 md:grid-cols-2">
+    <div class="card overflow-hidden">
+      <img [src]="product.imageUrl" [alt]="product.name" class="h-full w-full object-cover" />
+    </div>
+    <div class="space-y-4">
+      <a routerLink="/products" class="text-sm text-brand-700 hover:underline">← Back to products</a>
+      <h2 class="text-3xl font-bold text-slate-900">{{ product.name }}</h2>
+      <span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700">{{ product.category.name }}</span>
+      <p class="text-slate-600">{{ product.description }}</p>
+      <p class="text-3xl font-extrabold text-brand-700">${{ product.price }}</p>
+      <p class="text-sm text-slate-500">Stock: {{ product.stock }}</p>
+      <button (click)="addToCart()" class="btn-primary">Add to cart</button>
+    </div>
+  </section>
+}

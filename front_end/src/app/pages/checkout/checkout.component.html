@@ -1,0 +1,32 @@
+<section class="mx-auto max-w-xl">
+  <h2 class="mb-4 text-2xl font-bold text-slate-900">Checkout</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="card space-y-4 p-5">
+    <div>
+      <label class="mb-1 block text-sm font-medium text-slate-700">Shipping address</label>
+      <textarea formControlName="shippingAddress" rows="3" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"></textarea>
+      @if (form.controls.shippingAddress.invalid && form.controls.shippingAddress.touched) {
+        <p class="mt-1 text-xs text-red-600">Shipping address is required.</p>
+      }
+    </div>
+
+    <div>
+      <label class="mb-1 block text-sm font-medium text-slate-700">Phone</label>
+      <input formControlName="phone" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" />
+      @if (form.controls.phone.invalid && form.controls.phone.touched) {
+        <p class="mt-1 text-xs text-red-600">Phone number is required.</p>
+      }
+    </div>
+
+    @if (error) {
+      <div class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{{ error }}</div>
+    }
+    @if (success) {
+      <div class="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">{{ success }}</div>
+    }
+
+    <button type="submit" [disabled]="loading" class="btn-primary w-full">
+      {{ loading ? 'Placing order...' : 'Place order' }}
+    </button>
+  </form>
+</section>

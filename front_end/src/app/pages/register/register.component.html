@@ -1,0 +1,27 @@
+<section class="mx-auto max-w-md">
+  <h2 class="mb-4 text-2xl font-bold text-slate-900">Create Account</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="card space-y-4 p-5">
+    <div>
+      <label class="mb-1 block text-sm font-medium text-slate-700">Full name</label>
+      <input formControlName="fullName" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" />
+    </div>
+    <div>
+      <label class="mb-1 block text-sm font-medium text-slate-700">Email</label>
+      <input formControlName="email" type="email" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" />
+    </div>
+    <div>
+      <label class="mb-1 block text-sm font-medium text-slate-700">Password</label>
+      <input formControlName="password" type="password" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" />
+    </div>
+    @if (error) {
+      <div class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{{ error }}</div>
+    }
+    <button type="submit" [disabled]="loading" class="btn-primary w-full">
+      {{ loading ? 'Creating account...' : 'Register' }}
+    </button>
+    <p class="text-center text-sm text-slate-600">
+      Already have an account?
+      <a routerLink="/login" class="font-semibold text-brand-700 hover:underline">Sign in</a>
+    </p>
+  </form>
+</section>

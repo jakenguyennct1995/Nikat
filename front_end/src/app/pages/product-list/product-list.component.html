@@ -1,0 +1,53 @@
+<section>
+  <h2 class="mb-4 text-2xl font-bold text-slate-900">Product Catalog</h2>
+
+  <form [formGroup]="filterForm" (ngSubmit)="applyFilters()" class="card mb-6 grid gap-3 p-4 md:grid-cols-5">
+    <input formControlName="search" placeholder="Search product name..." class="rounded-lg border border-slate-300 px-3 py-2 text-sm md:col-span-2" />
+    <select formControlName="categoryId" class="rounded-lg border border-slate-300 px-3 py-2 text-sm">
+      <option value="">All categories</option>
+      @for (category of categories; track category.id) {
+        <option [value]="category.id">{{ category.name }}</option>
+      }
+    </select>
+    <select formControlName="sortBy" class="rounded-lg border border-slate-300 px-3 py-2 text-sm">
+      <option value="name">Sort by name</option>
+      <option value="price">Sort by price</option>
+    </select>
+    <div class="flex gap-2">
+      <select formControlName="sortDir" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
+        <option value="asc">ASC</option>
+        <option value="desc">DESC</option>
+      </select>
+      <button type="submit" class="btn-primary">Apply</button>
+    </div>
+  </form>
+
+  @if (loading) {
+    <div class="rounded-lg bg-white p-4 text-sm text-slate-600">Loading products...</div>
+  } @else if (error) {
+    <div class="rounded-lg bg-red-50 p-4 text-sm text-red-600">{{ error }}</div>
+  } @else {
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      @for (product of products; track product.id) {
+        <article class="card overflow-hidden">
+          <img [src]="product.imageUrl" [alt]="product.name" class="h-52 w-full object-cover" />
+          <div class="space-y-2 p-4">
+            <span class="inline-flex rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-700">{{ product.category.name }}</span>
+            <h3 class="text-lg font-bold text-slate-900">{{ product.name }}</h3>
+            <p class="text-sm text-slate-600">{{ product.description }}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold text-brand-700">${{ product.price }}</span>
+              <a [routerLink]="['/products', product.id]" class="text-sm font-semibold text-brand-700 hover:underline">View</a>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  }
+
+  <div class="mt-6 flex items-center justify-center gap-3">
+    <button (click)="previousPage()" class="rounded border border-slate-300 px-3 py-1 text-sm" [disabled]="page === 0">Previous</button>
+    <span class="text-sm text-slate-600">Page {{ page + 1 }} / {{ totalPages || 1 }}</span>
+    <button (click)="nextPage()" class="rounded border border-slate-300 px-3 py-1 text-sm" [disabled]="page + 1 >= totalPages">Next</button>
+  </div>
+</section>
