@@ -52,7 +52,7 @@ export class HomeComponent {
       price: 35000,
       originalPrice: 46000,
       image:
-        'https://images.unsplash.com/photo-1583511655826-05700442b31b?auto=format&fit=crop&w=900&q=80',
+        'assets/hop_pate.png',
       discountLabel: '-25%'
     },
     {
